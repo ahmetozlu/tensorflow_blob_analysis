@@ -188,7 +188,7 @@ def finalize(image, boxes, masks, class_ids, class_names,
     #initialize .csv
     with open('blob_measurements.csv', 'w') as f:
       writer = csv.writer(f)  
-      csv_line = "Blob Number, Blob Area (pixel), Blob Area (meter2), Blob Perimeter (pixel), Blob Perimeter (meters)"                 
+      csv_line = "Blob Number, Blob Area (pixel), Blob Area (mm2), Blob Perimeter (pixel), Blob Perimeter (mm)"                 
       writer.writerows([csv_line.split(',')])
     # Number of instances
     N = boxes.shape[0]
