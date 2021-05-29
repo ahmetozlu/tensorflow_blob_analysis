@@ -9,16 +9,13 @@ Here is a demonstration of input and output image. Output image has maskings and
   <img src="https://user-images.githubusercontent.com/22610163/119240817-02e65680-bb5b-11eb-885f-f4158204a3cc.gif" | width=480>
 </p>
 
-The output csv file has these headers to store blob shape properties:
-
-Blob Number | Blob Area (pixel) | Blob Area (mm2) | Blob Perimeter (pixel) | Blob Perimeter (mm)
---- | --- |--- | --- | --- |
+The output csv file has these headers to store blob shape properties: Blob Number, Blob Area (pixel), Blob Area (mm2), Blob Perimeter (pixel), Blob Perimeter (mm).
 
 ## Theory
 
 This project has 2 main components:
 
-- **[training_layer](https://github.com/ahmetozlu/tensorflow_blob_analysis/tree/main/training_layer):** This layer provides to perform transfer learning on pre-trained deep learning models using TensorFlow and Keras API. The output of this layer is used in processing_layer to process the images using our own trained deep learning model. The implementation and more detailed information for training_layer can be found in [here](https://github.com/ahmetozlu/tensorflow_blob_analysis/tree/main/training_layer).
+- **[training_layer](https://github.com/ahmetozlu/tensorflow_blob_analysis/tree/main/training_layer):** This layer provides performing transfer learning on pre-trained deep learning models using TensorFlow and Keras API. Basically, transfer learning is performed on the model to fine tune it for our custom cases. We specify our custom cases with our training data. The output of this layer is used in processing_layer to process the images using our own trained deep learning model. The implementation and more detailed information for training_layer can be found in [here](https://github.com/ahmetozlu/tensorflow_blob_analysis/tree/main/training_layer).
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/119240192-cd3f6e80-bb56-11eb-9662-b201df5ff869.png" | width=800>
@@ -29,6 +26,28 @@ This project has 2 main components:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/119240475-68851380-bb58-11eb-81d9-691b36b4c69e.png" | width=800>
 </p>
+
+
+## Installation
+
+1. Clone this repository
+2. Install dependencies
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+3. Run setup from the repository root directory
+    ```bash
+    python3 setup.py install
+    ``` 
+4. Install `pycocotools` from one of these repos. Here are listed the necessary commands:
+    ```bash
+    pip3 install Cython
+    git clone https://github.com/pdollar/coco.git  
+    cd coco/PythonAPI
+    make
+    sudo make install
+    sudo python3 setup.py install
+    ``` 
 
 ## Citation
 If you use this code for your publications, please cite it as:
@@ -45,3 +64,4 @@ Ahmet Özlü
 
 ## License
 This system is available under the MIT license. See the LICENSE file for more info.
+
