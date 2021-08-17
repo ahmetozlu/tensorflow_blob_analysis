@@ -3,13 +3,23 @@ A sample project to perform blob analysis on images to detect blobs and analyze 
 
 ## Quick Demo
 
-Here is a demonstration of input and output image. Output image has maskings and bounding boxes around the blobs. Blob shape features are predicted and calculated using the masked area and all these information are stored in proper csv files.
+Here is a demonstration of input and output image. Output image has maskings and bounding boxes around the blobs. Blob shape features like area and perimeter are calculated using [OpenCV](https://docs.opencv.org/4.5.2/d6/d00/tutorial_py_root.html) and [scikit-image](https://scikit-image.org/) and all these information are stored in proper csv files.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/119240817-02e65680-bb5b-11eb-885f-f4158204a3cc.gif" | width=480>
 </p>
 
 The output csv file has these headers to store blob shape properties: Blob Number, Blob Area (pixel), Blob Area (mm2), Blob Perimeter (pixel), Blob Perimeter (mm).
+
+**As a summary:**
+- *Input:*
+  - An image file
+
+- *Outputs:*
+  - Bounding boxes around the detected blobs
+  - Masking the blobs
+  - The area of the blobs
+  - The perimeter of the blobs
 
 ## Theory
 
@@ -64,4 +74,5 @@ Ahmet Özlü
 
 ## License
 This system is available under the MIT license. See the LICENSE file for more info.
+
 
