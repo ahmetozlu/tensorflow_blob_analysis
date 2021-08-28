@@ -73,11 +73,11 @@ def predict (src_image):
 
 		# results
 		r = results[0]
-		print(str(r))
+		#print(str(r))
 		class_names = ['BG', 'book']
 		masked_image_result = visualize.finalize(image, r['rois'], r['masks'], r['class_ids'], class_names, r['scores'], title="Predictions")
-		cv2.imwrite("result.png", masked_image_result.astype(np.uint8))
-		print("result image saved")
+		cv2.imwrite("output.png", masked_image_result.astype(np.uint8))
+		print("output image saved")
             
 	except Exception as e:
 	    print (e)

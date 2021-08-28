@@ -252,7 +252,7 @@ def finalize(image, boxes, masks, class_ids, class_names,
             c = np.expand_dims(verts.astype(np.float32), 1)
             # Convert it to UMat object
             c = cv2.UMat(c)
-            blob_perimeter = cv2.arcLength(c)
+            blob_perimeter = cv2.arcLength(c, True)
 
         cv2.rectangle(masked_image,(x1,y1),(x2, y2),(255,0,0),5)
         cv2.putText(masked_image, str(blob_counter), (x1,y1+8), cv2.FONT_HERSHEY_TRIPLEX, 1.5, 255)
@@ -260,7 +260,7 @@ def finalize(image, boxes, masks, class_ids, class_names,
         # store the values inside .csv file
         with open('blob_measurements.csv', 'a') as f:
           writer = csv.writer(f)                          
-          csv_line = str(blob_counter) + "," + str(blob_area) + "," + str(round(blob_area/100000,3)) + "," + str(round(blob_perimeter,3)) + "," + str(round(blob_perimeter,3))
+          csv_line = str(blob_counter) + "," + str(blob_area) + "," + str(round(blob_area/100,3)) + "," + str(round(blob_perimeter,3)) + "," + str(round(blob_perimeter/10,3))
           writer.writerows([csv_line.split(',')])
 
         # increase the blob_counter variable by one

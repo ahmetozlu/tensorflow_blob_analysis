@@ -9,6 +9,6 @@
 import cv2
 import backbone
 
-image = cv2.imread('Zl.png')
+image = cv2.imread('input.png')
 
 backbone.predict(image)
