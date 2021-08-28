@@ -7,4 +7,4 @@ Change this [line](https://github.com/ahmetozlu/tensorflow_blob_analysis/blob/ma
     
     python3 main.py
     
-The result image will be saved as "result.png" automatically.
+The result image will be saved as "output.png" automatically.

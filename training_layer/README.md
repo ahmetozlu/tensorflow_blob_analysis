@@ -12,7 +12,7 @@ It performs transfer learning to train just for heads of pre-trained Mask R-CNN 
 
 4. Run the command to start to training:
 
-       python3 custom.py train --dataset=./data --weights=coco
+       python3 training_main.py train --dataset=./data --weights=coco
 
 5. The frozen inference graph (.h5) will be saved after each epoch under the log directory that is given on the console at the beginning of the training process.
 
