@@ -260,7 +260,7 @@ def finalize(image, boxes, masks, class_ids, class_names,
         # store the values inside .csv file
         with open('blob_measurements.csv', 'a') as f:
           writer = csv.writer(f)                          
-          csv_line = str(blob_counter) + "," + str(blob_area) + "," + str(round(blob_area/100,3)) + "," + str(round(blob_perimeter,3)) + "," + str(round(blob_perimeter/10,3))
+          csv_line = str(blob_counter) + "," + str(blob_area) + "," + str(round(blob_area/99,3)) + "," + str(round(blob_perimeter,3)) + "," + str(round(blob_perimeter/99,3))
           writer.writerows([csv_line.split(',')])
 
         # increase the blob_counter variable by one
